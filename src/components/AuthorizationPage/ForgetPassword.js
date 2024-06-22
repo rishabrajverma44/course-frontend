@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import NavBar from "../NavBar";
 import "./Authorization.css";
-import { url } from "../../Backend-url";
 
 function ForgetPassword() {
   const navigate = useNavigate();
@@ -28,16 +27,15 @@ function ForgetPassword() {
     e.preventDefault();
     if (validateForm()) {
       axios
-        .post(url + "/send-otp", {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/send-otp`, {
           email: email,
         })
         .then((res) => {
           if (res.data.code === 200) {
-            setErr("otp sent");
+            setErr("OTP sent");
             navigate("/otp");
           } else if (res.data.code === 404) {
-            setErr("Email is not registerd !");
-          } else {
+            setErr("Email is not registered!");
           }
         })
         .catch((err) => {
@@ -50,7 +48,7 @@ function ForgetPassword() {
     <>
       <NavBar />
       <div className="start bg-black" style={{ height: "90px" }}>
-        welcome
+        Welcome
       </div>
       <div className="main-container">
         <div className="circle">
@@ -58,7 +56,7 @@ function ForgetPassword() {
           <div className="circle2"></div>
         </div>
         <div className="outcard">
-          <h1 className="center"> Forget Password</h1>
+          <h1 className="center">Forget Password</h1>
           <h3 style={{ textAlign: "center", color: "red", fontSize: "25px" }}>
             {err}
           </h3>
@@ -70,7 +68,7 @@ function ForgetPassword() {
             }}
             className="inputs"
             type="text"
-            placeholder="enter your email"
+            placeholder="Enter your email"
           />{" "}
           {errors.email && <div className="error">{errors.email}</div>} <br />{" "}
           <br />
@@ -81,7 +79,6 @@ function ForgetPassword() {
           </div>
           <div className="container-btn">
             <button
-              onClick={handleSubmit}
               style={{ width: "15rem", lineHeight: "15px" }}
               className="btns"
             >
@@ -90,11 +87,10 @@ function ForgetPassword() {
           </div>
           <div className="container-btn">
             <button
-              onClick={handleSubmit}
               style={{ width: "15rem", lineHeight: "15px" }}
               className="btns"
             >
-              <Link to={"/signin"}>SINGIN</Link>
+              <Link to={"/signin"}>SIGN IN</Link>
             </button>
           </div>
         </div>

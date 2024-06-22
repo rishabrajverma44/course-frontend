@@ -9,6 +9,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "bootstrap-dashboard": "^1.19.0",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",

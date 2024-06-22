@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar";
 import "./Authorization.css";
-import { url } from "../../Backend-url";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -51,7 +50,7 @@ function Signup() {
     e.preventDefault();
     if (validateForm()) {
       axios
-        .post(url + "/signup", {
+        .post(`${process.env.REACT_APP_BACKEND_URL}/signup`, {
           email: email,
           password: password,
           name: name,

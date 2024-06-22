@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../NavBar";
 import "./Authorization.css";
-import { url } from "../../Backend-url";
 
 function Signin() {
   const navigate = useNavigate();
@@ -11,19 +10,15 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
 
-
-
   const handleSubmit = () => {
-    
-
     axios
-      .post(url+"/signin", {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/signin`, {
         email: email,
         password: password,
       })
       .then((res) => {
         if (res.data.code === 500) {
-          setErr("User NOT registred !")
+          setErr("User NOT registred !");
         }
         if (res.data.code === 404) {
           setErr("Password is Wrong !");
@@ -38,29 +33,30 @@ function Signin() {
       })
       .catch((err) => {
         console.log(err);
-        if (err.message = 'Network Error') {
+        if ((err.message = "Network Error")) {
           console.log("Turn on BACKEND server");
           setErr("Please Turn on BACKEND server...");
         }
       });
-
-
-
   };
 
   return (
     <>
       <NavBar />
 
-      <div className="start" style={{ height: "90px" }}>welcome</div>
+      <div className="start" style={{ height: "90px" }}>
+        welcome
+      </div>
       <div className="main-container">
-      <div className="circle">
+        <div className="circle">
           <div className="circle1"></div>
           <div className="circle2"></div>
         </div>
         <div className="outcard">
           <h1 className="center">Signin for Course</h1>
-          <h3 style={{ textAlign: 'center', color: 'red', fontSize: '25px' }}>{err}</h3>
+          <h3 style={{ textAlign: "center", color: "red", fontSize: "25px" }}>
+            {err}
+          </h3>
           <span>Email</span>
           <br />
           <input
@@ -89,7 +85,6 @@ function Signin() {
               SUBMIT
             </button>
           </div>
-
           <div className="container-btn">
             <button onClick={handleSubmit} className="btns x">
               <Link to={"/signup"}>SIGN UP</Link>
@@ -100,7 +95,6 @@ function Signin() {
               <Link to={"/forget-pass"}>Forget Password</Link>
             </button>
           </div>
-
         </div>
       </div>
     </>
