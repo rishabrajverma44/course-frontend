@@ -57,7 +57,7 @@ function Signin() {
           <h3 style={{ textAlign: "center", color: "red", fontSize: "25px" }}>
             {err}
           </h3>
-          <span>Email</span>
+          <span>EMAIL</span>
           <br />
           <input
             onChange={(e) => {
@@ -66,10 +66,10 @@ function Signin() {
             value={email}
             className="inputs"
             type="email"
-            placeholder="Enter your password"
+            placeholder="Enter your email"
           />{" "}
           <br /> <br />
-          <span>Enter Your Password</span>
+          <span>ENTER YOUR PASSWORD</span>
           <input
             onChange={(e) => {
               setPassword(e.target.value);
