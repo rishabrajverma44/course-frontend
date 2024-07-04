@@ -13,27 +13,25 @@ const NavBar = () => {
   };
 
   return (
-    
-      <header>
-        <div>
-          <Link to="/">
-            <img src={img} alt="gahan-ai_logo" className="logo" />
-          </Link>
-        </div>
-        <nav ref={navRef}>
-          <Link to="/otherhome">HOME</Link>
-          <Link to="/courses">COURSES</Link>
-          <Link to="/pricing">PRICING</Link>
-          <Link to="/signin">SIGNIN/LOG-IN</Link>
-          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-            <FaTimes />
-          </button>
-        </nav>
-        <button className="nav-btn" onClick={showNavbar}>
-          <FaBars />
+    <header>
+      <div>
+        <Link to="/">
+          <img src={img} alt="gahan-ai_logo" className="logo" />
+        </Link>
+      </div>
+      <nav ref={navRef}>
+        <Link to="/otherhome">HOME</Link>
+        <Link to="/courses">COURSES</Link>
+        <Link to="/pricing">PRICING</Link>
+        <Link to="/signin">SIGNIN/LOG-IN</Link>
+        <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+          <FaTimes />
         </button>
-      </header>
-    
+      </nav>
+      <button className="nav-btn" onClick={showNavbar}>
+        <FaBars />
+      </button>
+    </header>
   );
 };
 

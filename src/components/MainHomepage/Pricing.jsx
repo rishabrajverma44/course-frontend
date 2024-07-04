@@ -7,7 +7,7 @@ const Pricing = () => {
   return (
     <>
       <NavBar />
-      <div className="start bg-black" style={{height:"90px"}}>welcome</div>
+      <div className="start bg-black" style={{height:"70px"}}>welcome</div>
       <div className="pricing_main">
         <div class="container card-body pricing price_card">
           <h5 class="card-title">ADAS</h5>

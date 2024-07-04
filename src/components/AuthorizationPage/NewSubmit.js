@@ -36,7 +36,7 @@ function NewSubmit() {
   return (
     <>
       <NavBar />
-      <div className="start bg-black" style={{ height: "90px" }}></div>
+      <div className="start bg-black" style={{ height: "70px" }}></div>
       <div className="main-container">
         <div className="circle">
           <div className="circle1"></div>
