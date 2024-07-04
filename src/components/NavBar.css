@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 10vh;
   background-color: rgb(220, 220, 220);
   border-bottom: 2px solid rgb(154, 150, 150);
   position: fixed;

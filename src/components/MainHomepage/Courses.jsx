@@ -6,8 +6,7 @@ import NavBar from "../NavBar";
 const Courses = () => {
   return (
     <>
-    <NavBar />
-    <div className="start bg-black" style={{height:"70px"}}>welcome</div>
+      <NavBar />
       <div className="container">
         <div id="fh5co-explore" class="fh5co-bg-section">
           <div class="fh5co-explore fh5co-explore1">

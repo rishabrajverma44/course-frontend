@@ -110,7 +110,7 @@ label span {
 }
 .photo {
   width: 70px;
-  height: 70px;
+  height: 10vh;
   border: 5px solid sienna;
   border-radius: 5%;
 }

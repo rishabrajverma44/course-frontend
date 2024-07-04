@@ -44,7 +44,7 @@ function Signin() {
     <>
       <NavBar />
 
-      <div className="start" style={{ height: "70px" }}>
+      <div className="start" style={{ height: "10vh" }}>
         welcome
       </div>
       <div className="main-container">

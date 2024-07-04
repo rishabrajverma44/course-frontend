@@ -81,7 +81,7 @@ function Signup() {
   return (
     <>
       <NavBar />
-      <div className="start bg-black" style={{ height: "70px" }}>
+      <div className="start bg-black" style={{ height: "10vh" }}>
         welcome
       </div>
       <div className="main-container">
