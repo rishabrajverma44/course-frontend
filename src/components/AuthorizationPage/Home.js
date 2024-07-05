@@ -16,26 +16,30 @@ function Home() {
 
   return (
     <>
-        <div className="navbar-home">
-          <Link to="/">
-            <img src={img} alt="gahan-ai_logo" className="logo" />
-          </Link>
-          <span>Welcome :-<h2>{localStorage.getItem("NAME")}</h2> </span>
-          <br></br>
-          <span>YOUR EMAIL :-{localStorage.getItem("EMAIL")} </span>
-          <br />{" "}
-          <button
-            className="btn-primary"
-            onClick={() => {
-              localStorage.clear();
-              navigate("/signin");
-            }}
-          >
-            {" "}
-            LOGOUT{" "}
-          </button>
-          <Link to='/home/dashboard' className="btn-primary dashboard">GO TO DASHBOARD</Link>
-        </div>
+      <div className="navbar-home">
+        <Link to="/">
+          <img src={img} alt="gahan-ai_logo" className="logo" />
+        </Link>
+        <span>
+          Welcome :-<h2>{localStorage.getItem("NAME")}</h2>{" "}
+        </span>
+        <br></br>
+        <span>YOUR EMAIL :-{localStorage.getItem("EMAIL")} </span>
+        <br />{" "}
+        <button
+          className="btn-primary"
+          onClick={() => {
+            localStorage.clear();
+            navigate("/signin");
+          }}
+        >
+          {" "}
+          LOGOUT{" "}
+        </button>
+        <Link to="/home/dashboard" className="btn-primary dashboard">
+          GO TO DASHBOARD
+        </Link>
+      </div>
       <Payment amount={35000} />
     </>
   );

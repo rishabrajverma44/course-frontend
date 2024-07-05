@@ -9,7 +9,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
-  const [signup, setSignup] = useState("");
+  const [massage, setMassage] = useState("");
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -63,21 +63,21 @@ function Signup() {
             setPassword("");
             setName("");
             setMobile("");
-            setSignup("Please check your mail for verification...");
+            setMassage("Please check your mail for verification...");
           }
           if (res.data.code === 500) {
-            setEmail("Please check your mail for verification");
+            setMassage(res.data.message);
+            console.log(res);
           } else {
             setEmail("");
             setPassword("");
           }
         })
         .catch((err) => {
-          console.log(err);
+          console.log("err in singnin" + err);
         });
     }
   };
-
   return (
     <>
       <NavBar />
@@ -90,7 +90,7 @@ function Signup() {
           <div className="circle2"></div>
         </div>
         <div className="outcard">
-          {<h3 className="signup">{signup}</h3>}
+          {<h3 className="signup">{massage}</h3>}
           <h1 className="center">Signup for Course</h1>
           <span>NAME</span>
           <br />

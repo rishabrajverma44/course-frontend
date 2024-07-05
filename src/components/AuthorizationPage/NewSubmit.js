@@ -22,7 +22,6 @@ function NewSubmit() {
         if (res.data.code === 200) {
           navigate("/signin");
           setErr("New Password Updated !");
-          alert("Password Updated.");
         } else {
           setErr("Wrong OTP Try again !");
           alert("server err / wrong OTP");

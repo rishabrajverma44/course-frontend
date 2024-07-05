@@ -12,7 +12,6 @@ const Profile = () => {
     if (!token) {
       navigate("/signin");
     }
-    
   }, []);
 
   // Sidebar toggling state
@@ -22,13 +21,11 @@ const Profile = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const email=localStorage.getItem("EMAIL");
+  const email = localStorage.getItem("EMAIL");
   const [name, setName] = useState(localStorage.getItem("NAME"));
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
   const [errors, setErrors] = useState({});
-
-
 
   const validateForm = () => {
     let newErrors = {};
@@ -48,42 +45,38 @@ const Profile = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       await axios
-      .post("http://localhost:5000/profileupdate", {
-        name:name,
-        email: email,
-        password: password,
-        mobile:mobile,
-      })
-      .then((res) => {
-        if (res.data.code === 500) {
-          alert("User Not Found");
-        }
-        if (res.data.code === 404) {
-          alert("Password is wrong");
-        }
-        if (res.data.code === 200) {
-          alert("Your Profile Updated")
-          localStorage.setItem("TOKEN", res.data.token);
-          localStorage.setItem("NAME", res.data.name);
-          localStorage.setItem("MOBILE",res.data.mobile);
-          localStorage.setItem("EMAIL",res.data.email);
-          
-        }else{
-          console.log("invalid response");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-     
-
+        .post("http://localhost:5000/profileupdate", {
+          name: name,
+          email: email,
+          password: password,
+          mobile: mobile,
+        })
+        .then((res) => {
+          if (res.data.code === 500) {
+            alert("User Not Found");
+          }
+          if (res.data.code === 404) {
+            alert("Password is wrong");
+          }
+          if (res.data.code === 200) {
+            alert("Your Profile Updated");
+            localStorage.setItem("TOKEN", res.data.token);
+            localStorage.setItem("NAME", res.data.name);
+            localStorage.setItem("MOBILE", res.data.mobile);
+            localStorage.setItem("EMAIL", res.data.email);
+          } else {
+            console.log("invalid response");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
-      console.log("form is not validated...")
+      console.log("form is not validated...");
     }
   };
 
@@ -200,7 +193,6 @@ const Profile = () => {
               </div>
             </div>
 
-
             <div class="container col-md-6">
               <div class="card mb-3">
                 <div class="card-body ">
@@ -209,7 +201,8 @@ const Profile = () => {
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Name<br/>
+                      Name
+                      <br />
                       <input
                         onChange={(e) => setName(e.target.value)}
                         value={name}
@@ -217,18 +210,16 @@ const Profile = () => {
                         type="text"
                       />
                       <br></br>
-            
                     </div>
                   </div>
-
-
 
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      mobile<br/>
+                      mobile
+                      <br />
                       <input
                         onChange={(e) => setMobile(e.target.value)}
                         value={mobile}
@@ -265,21 +256,20 @@ const Profile = () => {
                   </div>
 
                   <div class="row">
-                    
-                    
                     <div className="col-sm-3">
-                    <button onClick={handleSubmit} className="update">
+                      <button onClick={handleSubmit} className="update">
                         SUBMIT
                       </button>
                     </div>
-                    <br /><br /><br /><br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </div>
-
                 </div>
               </div>
             </div>
-            </div>
-          
+          </div>
         </div>
       </div>
     </div>
