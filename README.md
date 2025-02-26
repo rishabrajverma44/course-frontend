@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# MERN Stack Authentication & Payment App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Project Overview
 
-## Available Scripts
+This is a **full-stack authentication and payment application** built using the **MERN stack**. It features **JWT-based user authentication and authorization** with email verification services and **Razorpay payment gateway integration**.
 
-In the project directory, you can run:
+## 🛠 Tech Stack
 
-### `npm start`
+- **MongoDB** - Database
+- **Express.js** - Backend framework
+- **React.js** - Frontend library
+- **Node.js** - Server environment
+- **JWT** - Authentication & Authorization
+- **Razorpay** - Payment Gateway
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔑 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ User registration with email verification  
+✅ Secure login/logout with JWT authentication  
+✅ Role-based access control  
+✅ Password hashing for security  
+✅ Razorpay payment gateway integration  
+✅ Responsive UI with React  
 
-### `npm test`
+## 🔧 Installation & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/rishabrajverma44/course-frontend.git
+   cd course-frontend
+   ```
 
-### `npm run build`
+2. **Install dependencies:**
+   ```bash
+   # Install backend dependencies
+   cd backend
+   yarn install
+   
+   # Install frontend dependencies
+   cd ../frontend
+   yarn install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Set up environment variables:**  
+   Create a `.env` file in the `backend` folder and configure the following:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   EMAIL_SERVICE=your_email_service_provider
+   EMAIL_USER=your_email_username
+   EMAIL_PASS=your_email_password
+   RAZORPAY_KEY_ID=your_razorpay_key_id
+   RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Run the application:**
+   ```bash
+   # Start backend server
+   cd backend
+   yarn start
+   
+   # Start frontend server
+   cd ../frontend
+   yarn start
+   ```
+   The frontend will run on `http://localhost:3000` and the backend on `http://localhost:5000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔗 Live Demo
+[Course Web App - Live](https://course-frontend-pi.vercel.app/signin)
 
-### `npm run eject`
+## 📌 Usage
+- **Register/Login** with email verification.
+- **Authenticate** users using JWT.
+- **Authorize** access based on roles.
+- **Make Payments** using Razorpay.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🎯 Future Plans
+🔹 Enhance security with multi-factor authentication  
+🔹 Add social authentication (Google, Facebook)  
+🔹 Implement subscription-based payment models  
+🔹 Improve UI/UX for a better user experience  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🎯 Deployment
+This project can be deployed on:
+- **Frontend:** Vercel/Netlify
+- **Backend:** Heroku/Render
+- **Database:** MongoDB Atlas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🤝 Contributing
+Feel free to fork the repo, open issues, and submit pull requests!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📜 License
+This project is licensed under the MIT License.
 
-## Learn More
+## 📬 Contact
+For support or inquiries, contact [rishabrajverma44](https://github.com/rishabrajverma44).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
